@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .main {
+                margin: 60px;
+            }
+            .dashboard {
+                margin-top: 30px;
+            }
+        </style>
+    </head>
+  <body>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="https://unpkg.com/bipp"></script>
+  
+  <div class="main">
+    <h2>Dynamic Embedding</h2>  
+  <div class="dashboard">
+      <div id='container'></div>
+  </div>
+</div>
+  <script>
+      const height = window.innerHeight;
+
+      const url = "<dummy_link>";
+      let config = { id : 'container', width:"100%", height, style: 'border:none;'}
+      
+      let bipp = new Bipp();
+      bipp.load(url, config);
+  </script>
+  
+  </body>
+  </html>

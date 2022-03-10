@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+  <html>
+      <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <style>
+              .main {
+                  margin: 200px;
+              }
+            .row {
+                display: flex;
+                margin: 8px;   
+            }
+            .label {
+                width: 100px;
+            }
+            .btn {
+                margin-left: 100px;
+            }
+            .warn {
+                color: red;
+                display: none;
+            }
+      </style>
+      </head>
+  <div class="main">
+        <h2>Login</h2>
+
+        <div class="row">
+            <div class="label">UserName</div><input id="uname" type="text"/>
+        </div>
+        <div class="row">
+            <div class="label">Password</div><input type="password" id="pwd" type="text"/>
+        </div>
+        <div class="row">
+            
+            <div class="label"></div><div id="custom" class="warn">Invalid username or password.</div>
+            
+        </div>
+        <div class="row">
+            <input class="btn" type="submit"value="login" onclick="login()" />
+        </div>
+        <div id="ok"></div>
+  
+</div>
+  <script>
+      async function login() {
+        let uname = document.getElementById("uname").value;
+        let pwd = document.getElementById("pwd").value;
+       
+        window.location.assign(`/dashboard?user=${uname}&pwd=${pwd}`);
+      }
+    
+  </script>
+  
+  </body>
+  </html>

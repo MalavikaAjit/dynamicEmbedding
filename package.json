@@ -1,0 +1,20 @@
+{
+  "name": "bipp-de-dev",
+  "version": "1.0.0",
+  "description": "bipp dynamic embedding",
+  "main": "index.js",
+  "scripts": {
+      "start": "node index.js",
+      "build": "pkg --targets node12-linux-x64 index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+      "axios": "^0.24.0",
+      "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nexe": "^3.3.2",
+    "pkg": "^4.4.6"
+  }
+}
