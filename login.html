@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
   <html>
       <head>
           <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,4 +53,336 @@
   </script>
   
   </body>
-  </html>
+  </html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .logo {
+            width: 22%;
+            display: flex;
+            justify-content: start;
+            align-items: revert;
+
+        }
+
+        .logo1 {
+            width: 15%;
+            display: flex;
+            justify-content: end;
+            align-items: revert;
+
+        }
+
+        .logo img {
+            width: 22%;
+
+        }
+
+        .logo1 img {
+            width: 21%;
+
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            top: 0;
+            cursor: pointer;
+            border-bottom: 2px solid #030956;
+            ;
+        }
+
+
+        .background {
+            background: rgba(224, 219, 219, 0.03) url(../img/img3.jpg);
+            background-size: cover;
+            background-blend-mode: darken;
+        }
+
+
+        .nav-list {
+
+            display: flex;
+            list-style: wrap;
+            align-items: center;
+        }
+
+
+        .nav-list li {
+            list-style: none;
+            padding: 27px 81px;
+            font-size: 20px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .userName {
+            font-size: 20px;
+            font-family: 'Ubuntu', sans-serif;
+            margin-right: 7px;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .nav-list li a {
+            text-decoration: none;
+            color: #030956;
+        }
+
+        .heilight-name {
+            color: #f6f7fa !important;
+        }
+
+        .sales {
+
+            background-color: #030956;
+            width: 30px;
+            border: 1px solid rgb(218, 218, 226);
+            color: aliceblue !important;
+        }
+
+
+
+        .container {
+            background-color: #ffff;
+            padding: 20px 20px 20px 0;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            border-style: ridge;
+            width: 50%;
+            margin: 50px;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 450px;
+
+            border-radius: 25px;
+
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            justify-content: space-around;
+        }
+
+        .main-img {
+            /* background-image: url(https://images.unsplash.com/photo-1605106250963-ffda6d2a4b32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80); */
+            background-size: cover;
+            width: 300px;
+            height: 500px;
+            border-radius: 25px;
+            background-color: hsl(242deg 88% 66% / 10%);
+        }
+
+        h1 {
+            color: #2b2684;
+            margin-bottom: 20px;
+        }
+
+        .wrapper p {
+            font-size: 0.75rem;
+            color: #2b2684;
+            margin-bottom: 40px;
+        }
+
+        .pass-icon {
+            display: flex;
+            position: relative;
+            width: 250px;
+        }
+
+        #uname,
+        #pwd {
+            height: 40px;
+            width: 250px;
+            border-radius: 15px;
+            padding-left: 15px;
+            border: 1px solid #2b2684;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .pass-icon img {
+            width: 25px;
+            position: absolute;
+            align-self: center;
+            top: 27%;
+            right: 0;
+            margin-right: 10px;
+            filter: opacity(0.3);
+        }
+
+        a {
+            text-decoration: none;
+            color: #2b2684;
+            font-size: 0.75rem;
+            text-align: right;
+            margin-right: 15px;
+        }
+
+        #pwd {
+            margin-bottom: 10px;
+        }
+
+        #login-btn {
+            margin: 20px 0;
+            height: 40px;
+            border-radius: 15px;
+            border: none;
+            background-color: #2b2684;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: 0.5s;
+
+        }
+
+        span {
+            text-align: center;
+            position: relative;
+        }
+
+        .or {
+            width: 250px;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            color: #2b2684;
+            margin-bottom: 20px;
+            font-size: 0.8rem;
+        }
+
+        .or hr {
+            width: 40%;
+            height: 1px;
+            background-color: #2b2684;
+            border: none;
+            align-self: center;
+        }
+
+        .google-btn {
+            height: 40px;
+            border: 1px solid #2b2684;
+            border-radius: 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            margin-bottom: 20px;
+            color: #2b2684;
+            transition: 0.5s;
+
+        }
+
+        .google-btn img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .register {
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .register-btn {
+            height: 25px;
+            padding: 5px 15px;
+            display: flex;
+            align-items: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            background-color: white;
+            border: 1px solid #2b2684;
+            border-radius: 10px;
+            color: #2b2684;
+            transition: 0.5s;
+        }
+
+        .register p {
+            margin: 0 11px 0;
+        }
+
+        button:hover,
+        #login-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <title>Heroku Project</title>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar background">
+            <!-- <ul class="nav-list"> -->
+            <div class="logo"><img src="./logos/C-Mart-logos.jpeg" alt="logo"></div>
+
+            <!-- </ul> -->
+        </nav>
+        <div style="display: flex; justify-content: center ;">
+            <div class="container">
+                <div class="wrapper">
+                    <form>
+                        <h1>Login</h1>
+                        <p>If you are already a member, easily log in</p>
+                        <input type="name" id="uname" placeholder="Username">
+                        <div class="pass-icon">
+                            <input type="password" id="pwd" placeholder="Password">
+
+                        </div>
+
+                        <a href="#">Forgot my password</a>
+                        <!-- <input type="submit" id="login-btn" value="Login"> -->
+                        <button type="button" id="login-btn" value="Login" onclick="location.href='index.html'"
+                            class="btn button2">Login</button>
+                        <!-- <div class="or">
+                            <hr>
+                            <span>OR</span>
+                            <hr>
+                        </div> -->
+                        <!-- <button class="google-btn">
+                         
+                            Login with Google
+                        </button> -->
+                        <!-- <div class="register">
+                            <p>If you don't have an account</p>
+                            <button class="register-btn">Register</button>
+                        </div> -->
+                    </form>
+                </div>
+                <div class="main-img"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        async function login() {
+            let uname = document.getElementById("uname").value;
+            let pwd = document.getElementById("pwd").value;
+
+            window.location.assign(`/dashboard?user=${uname}&pwd=${pwd}`);
+        }
+
+    </script>
+</body>
+
+</html>
