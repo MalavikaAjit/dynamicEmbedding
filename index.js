@@ -18,11 +18,11 @@ const fs = require('fs');
 // for simplicity we are hardcoding it
 
 const usersMap = {
-  'demo1': 'AA-10315',
-  'demo2': 'AA-10375',
-  'demo3': 'AA-10480',
-  'demo4': 'AA-10645',
-  'demo5': 'AB-10015',
+  'jim': 'jim@123',
+  // 'demo2': 'AA-10375',
+  // 'demo3': 'AA-10480',
+  // 'demo4': 'AA-10645',
+  // 'demo5': 'AB-10015',
 }
 
 function getCustomerId(uname) {
