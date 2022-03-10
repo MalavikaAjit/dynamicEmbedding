@@ -137,6 +137,12 @@ app.get("/", (req, res) => {
     res.send(data);
   })
 });
+app.use(bodyParser.json());
+
+let port = process.env.PORT || 9000;
+
+app.use(express.static('public'));
+app.use('/images', express.static(__dirname + '/Images'));
 
 app.listen(port, function () {
  console.log('Running node server', 'on port ' + port);
