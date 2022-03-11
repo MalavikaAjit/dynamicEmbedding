@@ -14,8 +14,7 @@ const express = require('express');
 const axios = require('axios');
 const fs = require('fs');
 const atob = (base64) => {
-   return Buffer.from(base64, 'base64').toString('binary');
-  };
+   return Buffer.from(base64, 'base64').toString('binary');};
 // username to customer_id mapping can be read from database or flat file
 // for simplicity we are hardcoding it
 
@@ -33,12 +32,12 @@ function getCustomerId(uname) {
   }
   return null;
 }
-// function getCustomerPwd(pwd) {
-//   if (usersMap[pwd]) {
-//     return usersMap[pwd];
-//   }
-//   return null;
-// }
+function getCustomerPwd(pwd) {
+  if (usersMap[pwd]) {
+    return usersMap[pwd];
+  }
+  return null;
+}
 
 const app = express();
 
@@ -116,7 +115,7 @@ app.get('/dashboard', (req, res) => {
   let customerId = getCustomerId(uname);
   let customerPwd = getCustomerPwd(pwd)
 
-  if (!customerId) {
+  if (!customerId && !customerPwd) {
     res.send('<h1>Invalid User</h1>');
     return;
   }
