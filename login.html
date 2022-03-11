@@ -332,13 +332,10 @@
 </head>
 
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/Base64/1.1.0/base64.min.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/utf8/3.0.0/utf8.min.js"></script>
     <div>
         <nav class="navbar background">
             <!-- <ul class="nav-list"> -->
-            <div class="logo"><img src="C-Mart-logos.jpeg" alt="logo"></div>
+            <div class="logo"><img src="./public/C-Mart-logos.jpeg" alt="logo"></div>
 
             <!-- </ul> -->
         </nav>
@@ -378,15 +375,13 @@
         </div>
     </div>
     <script>
+        async function login() {
+            let uname = document.getElementById("uname").value;
+            let pwd = document.getElementById("pwd").value;
 
-        async  function login() {
-             console.log('login process')
-             let uname = document.getElementById("uname").value;
-             let pwd = document.getElementById("pwd").value;   
-             var ciphertext = btoa(uname + '-' + pwd);
-              console.log(uname, pwd, ciphertext);
-            window.location.assign(`/dashboard?session=${ciphertext}`);
-            }
+            window.location.assign(`/dashboard?user=${uname}&pwd=${pwd}`);
+        }
+
     </script>
 </body>
 
