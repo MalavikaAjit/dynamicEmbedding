@@ -18,13 +18,6 @@ const atob = (base64) => {
   };
 // username to customer_id mapping can be read from database or flat file
 // for simplicity we are hardcoding it
-app.get('/dashboard', (req, res) => {
-  let session = req.query['session']
-  console.log('session', session);
-  let originalText = atob(session);
-  console.log('org text', originalText);
-  embedHandler(req, res, originalText);
-});
 
 const usersMap = {
   'jim': 'jim@123',
@@ -123,7 +116,7 @@ app.get('/dashboard', (req, res) => {
   let customerId = getCustomerId(uname);
   let customerPwd = getCustomerPwd(pwd)
 
-  if (!customerId ) {
+  if (!customerId) {
     res.send('<h1>Invalid User</h1>');
     return;
   }
@@ -154,7 +147,13 @@ app.get("/", (req, res) => {
   })
 });
 
-
+app.get('/dashboard', (req, res) => {
+  let session = req.query['session']
+  console.log('session', session);
+  let originalText = atob(session);
+  console.log('org text', originalText);
+  embedHandler(req, res, originalText);
+});
 
 app.use(express.static('public'));
 app.use('/images', express.static(__dirname + '/Images'));
