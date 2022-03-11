@@ -40,12 +40,12 @@ function getCustomerId(uname) {
   }
   return null;
 }
-function getCustomerPwd(pwd) {
-  if (usersMap[pwd]) {
-    return usersMap[pwd];
-  }
-  return null;
-}
+// function getCustomerPwd(pwd) {
+//   if (usersMap[pwd]) {
+//     return usersMap[pwd];
+//   }
+//   return null;
+// }
 
 const app = express();
 
@@ -123,7 +123,7 @@ app.get('/dashboard', (req, res) => {
   let customerId = getCustomerId(uname);
   let customerPwd = getCustomerPwd(pwd)
 
-  if (!customerId && !customerPwd) {
+  if (!customerId ) {
     res.send('<h1>Invalid User</h1>');
     return;
   }
