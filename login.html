@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Base64/1.1.0/base64.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/utf8/3.0.0/utf8.min.js"></script>
-
+   
     <style>
         * {
             margin: 0px;
@@ -334,12 +334,13 @@
             console.log('login process')
             let uname = document.getElementById("uname").value;
             let pwd = document.getElementById("pwd").value;
-            var ciphertext = btoa('user=' + uname + '&pwd=' + pwd);
+            var ciphertext = btoa(uname + '-' + pwd);
             console.log(uname, pwd, ciphertext);
-            window.location.assign(`/dashboard?${ciphertext}`);
+            window.location.assign(`/dashboard?session=${ciphertext}`);
         }
 
     </script>
+    <!-- <script src="./index.js"></script> -->
 </body>
 
 </html>

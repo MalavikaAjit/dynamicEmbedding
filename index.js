@@ -124,7 +124,7 @@ app.get('/dashboard', (req, res) => {
     return;
   }
 
-  generateEmbedLink(customerId, (embed_url) => {
+  // generateEmbedLink(customerId, (embed_url) => {
 
     // sample.html has the basic embed snippet, just replace the <dummy_link> with
     // the generated embed link
@@ -134,11 +134,11 @@ app.get('/dashboard', (req, res) => {
         console.error(err)
         return
       }
-      let ndata = data.replace('<dummy_link>', embed_url);
-      res.send(ndata);
+      // let ndata = data.replace('<dummy_link>', embed_url);
+      res.send(data);
     })
   });
-});
+// });
 
 app.get("/", (req, res) => {
   fs.readFile('./login.html', 'utf8', (err, data) => {
