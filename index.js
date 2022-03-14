@@ -14,6 +14,9 @@ const express = require('express');
 const axios = require('axios');
 const fs = require('fs');
 
+const atob = (base64) => {
+  return Buffer.from(base64, 'base64').toString('binary');
+};
 // username to customer_id mapping can be read from database or flat file
 // for simplicity we are hardcoding it
 
@@ -35,6 +38,13 @@ function getCustomerId(uname) {
 const app = express();
 
 const port = process.env.PORT || 9000;
+app.get('/dashboard', (req, res) => {
+  let session = req.query['session']
+  console.log('session', session);
+  let originalText = atob(session);
+  console.log('org text', originalText);
+  embedHandler(req, res, originalText);
+});
 
 /*
   Generate embed link dynamically by passing dashboard_id and customer specific filters
@@ -70,28 +80,28 @@ function generateEmbedLink(customerId, callback) {
 
   // Call bipp rest API to generate embed link
   axios
-   .post(
-     url,
-     {
-       id: dashboardId,
-       domains,
-       filters,
-       description: 'Embed Link for Customer : ' + customerId,
-     },
-     {
-       headers: {
-         'X-API-Key': apiKey,
-         'X-Org-ID': orgID,
-       },
-     }
-   )
-   .then(function (response) {
-     const { embed_url } = response.data;
-     callback(embed_url);
-   })
-   .catch(function (error) {
-     console.log(error);
-  });
+    .post(
+      url,
+      {
+        id: dashboardId,
+        domains,
+        filters,
+        description: 'Embed Link for Customer : ' + customerId,
+      },
+      {
+        headers: {
+          'X-API-Key': apiKey,
+          'X-Org-ID': orgID,
+        },
+      }
+    )
+    .then(function (response) {
+      const { embed_url } = response.data;
+      callback(embed_url);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
 app.get('/dashboard', (req, res) => {
@@ -117,7 +127,7 @@ app.get('/dashboard', (req, res) => {
     // sample.html has the basic embed snippet, just replace the <dummy_link> with
     // the generated embed link
 
-    fs.readFile('sample.html', 'utf8' , (err, data) => {
+    fs.readFile('sample.html', 'utf8', (err, data) => {
       if (err) {
         console.error(err)
         return
@@ -129,7 +139,7 @@ app.get('/dashboard', (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  fs.readFile('./login.html', 'utf8' , (err, data) => {
+  fs.readFile('./login.html', 'utf8', (err, data) => {
     if (err) {
       console.error(err)
       return
@@ -143,5 +153,5 @@ app.use(express.static('public'));
 app.use('/images', express.static(__dirname + '/Images'));
 
 app.listen(port, function () {
- console.log('Running node server', 'on port ' + port);
+  console.log('Running node server', 'on port ' + port);
 });
