@@ -315,11 +315,7 @@
     if (!customerId ) {
       res.send('<h1>Invalid User</h1>');
       return;
-    }if (!customerPwd ) {
-      res.send('<h1>Invalid User</h1>');
-      return;
     }
-  
     // generateEmbedLink(customerId, (embed_url) => {
   
       // sample.html has the basic embed snippet, just replace the <dummy_link> with
