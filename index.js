@@ -312,7 +312,10 @@
     let customerId = getCustomerId(uname);
     let customerPwd = getCustomerPwd(pwd);
   
-    if (!customerId && !customerPwd) {
+    if (!customerId ) {
+      res.send('<h1>Invalid User</h1>');
+      return;
+    }if (!customerPwd ) {
       res.send('<h1>Invalid User</h1>');
       return;
     }
