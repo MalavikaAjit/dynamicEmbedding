@@ -200,11 +200,8 @@
   // for simplicity we are hardcoding it
   
   const usersMap = {
-    'demo1': 'AA-10315',
-    'demo2': 'AA-10375',
-    'demo3': 'AA-10480',
-    'demo4': 'AA-10645',
-    'demo5': 'AB-10015',
+    'jim': 'jim@123',
+    
   }
   
   function getCustomerId(uname) {
@@ -213,6 +210,13 @@
     }
     return null;
   }
+  function getCustomerPwd(pwd) {
+    if (usersMap[pwd]) {
+      return usersMap[pwd];
+    }
+    return null;
+  }
+  
   
   const app = express();
   
@@ -306,8 +310,9 @@
   
     // identify customerId from the username
     let customerId = getCustomerId(uname);
+    let customerPwd = getCustomerPwd(pwd);
   
-    if (!customerId) {
+    if (!customerId && !customerPwd) {
       res.send('<h1>Invalid User</h1>');
       return;
     }
