@@ -38,6 +38,8 @@ function getCustomerId(uname) {
 const app = express();
 
 const port = process.env.PORT || 9000;
+
+
 app.get('/dashboard', (req, res) => {
   let session = req.query['session']
   console.log('session', session);
